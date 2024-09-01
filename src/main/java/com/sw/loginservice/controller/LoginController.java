@@ -35,16 +35,8 @@ public class LoginController {
     @PostMapping("/naver-info")
     public void naverInfo(@RequestBody NaverEntityRequest naver, HttpServletRequest request) {
         try {
-            System.out.println(naver);
-            // String 타입 id를 그대로 사용
-
             // 서비스 호출 및 결과 메시지 생성
-            String msg = naverService.insertNaverInfo(naver);
-
-            // 요청 속성에 메시지 설정
-            request.setAttribute("msg", msg);
-            System.out.println("msg = " + msg);
-
+            naverService.insertNaverInfo(naver);
         } catch (Exception e) {
             e.printStackTrace();
         }

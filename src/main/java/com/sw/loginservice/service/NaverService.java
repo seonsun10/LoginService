@@ -14,7 +14,7 @@ public class NaverService {
     private final InfoRepository infoRepository;
 
     @Transactional
-    public String insertNaverInfo(NaverEntityRequest naver) {
+    public void insertNaverInfo(NaverEntityRequest naver) {
 
         try {
             NaverEntity entity = NaverEntity.builder()
@@ -28,9 +28,6 @@ public class NaverService {
             infoRepository.save(entity);
         }catch(Exception e){
             e.printStackTrace();
-            return "fail";
         }
-
-        return "success";
     }
 }

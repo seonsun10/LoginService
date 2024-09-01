@@ -27,10 +27,7 @@
                 name: name,
                 gender: gender,
                 birthyear: birthyear
-            }),
-            success: function(data){
-                console.log(data.msg);
-            }
+            })
         });
 
     }
